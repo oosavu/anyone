@@ -5,3 +5,4 @@ edition.workspace = true
 
 [dependencies]
 api = { path = "../api" }
+cpal = "0.18.1"
