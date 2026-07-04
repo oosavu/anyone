@@ -6,7 +6,6 @@ pub struct Bus {
     frames: usize,
     silence: Vec<bool>,
 }
-
 impl Bus {
     pub fn new(channels: usize, frames: usize) -> Self {
         Self {

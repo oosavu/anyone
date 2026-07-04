@@ -1,8 +1,24 @@
-use std::f32::consts::PI;
+use std::{collections::HashMap, f32::consts::PI};
 
 use api::*;
 
 use crate::audio_backend::AudioBackend;
+
+struct RealtimeCore {
+    in_bus: Bus,
+    out_bus: Bus,
+    modules: HashMap<String, Box<dyn Module>>,
+}
+
+impl RealtimeCore {
+    fn new() -> Self {
+        Self {
+            in_bus: Bus::new(2, 512),
+            out_bus: Bus::new(2, 512),
+            modules: HashMap::new(),
+        }
+    }
+}
 
 pub struct Engine {
     modules: Vec<Box<dyn Module>>,
