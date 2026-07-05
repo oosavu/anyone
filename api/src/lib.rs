@@ -5,5 +5,5 @@ mod port;
 
 pub use bus::Bus;
 pub use event::{Event, EventCable, EventType, TimedEvent};
-pub use module::{EventPortInfo, Module, ModuleInfo, PortInfo};
+pub use module::{EventPortInfo, Module, ModuleID, ModuleInfo, PortInfo};
 pub use port::Port;

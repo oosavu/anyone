@@ -1,4 +1,4 @@
-use crate::{EventCable, Port, TimedEvent};
+use crate::{EventCable, TimedEvent};
 
 pub struct PortInfo {
     pub name: String,
@@ -9,7 +9,7 @@ pub struct EventPortInfo {
     pub name: String,
 }
 
-type ModuleID = String;
+pub type ModuleID = String;
 
 pub struct ModuleInfo {
     pub name: String,
@@ -24,9 +24,9 @@ pub trait Module {
 
     fn process(
         &mut self,
-        ports_in: &[Port],
+        ports_in: &[&[f32]],
         events_in: &[TimedEvent],
-        ports_out: &mut [Port],
+        ports_out: &[&mut [f32]],
         events_out: &mut [EventCable],
     );
 }
